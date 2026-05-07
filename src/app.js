@@ -12,9 +12,12 @@ import dashboardRoutes from "./routes/dashboard.routes.js";
 const app = express();
 
 app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials:true
+  origin: [
+    "http://localhost:5173",
+    "https://projectflow-frontend-production.up.railway.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
 }));
 app.use(morgan('dev'));
 app.use(express.json());
